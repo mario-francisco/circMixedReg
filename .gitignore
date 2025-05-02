@@ -1,0 +1,27 @@
+# Archivos de RStudio
+.Rproj.user/
+*.Rproj
+.Rhistory
+.RData
+.Ruserdata
+
+# Carpeta de datos sin procesar
+data-raw/
+
+# Ejemplos interactivos y scripts de desarrollo
+examples/
+dev/
+
+# Archivos temporales de documentación
+README_files/
+
+# Archivos del sistema
+.DS_Store
+*.tar.gz
+
+# Carpeta de revisión de R CMD check
+circMixedReg.Rcheck/
+.Rproj.user
+.Rdata
+.httr-oauth
+.quarto

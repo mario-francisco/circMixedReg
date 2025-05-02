@@ -1,0 +1,40 @@
+Package: circMixedReg
+Title: Circular Nonparametric Regression with Mixed-Type Predictors
+Version: 0.1.0
+Authors@R: 
+    c(
+      person("Mario", "Francisco-Fernandez", email = "mario.francisco@udc.es", role = c("aut", "cre")),
+      person("Andrea", "Meilan-Vila", role = "ctb")
+    )
+Description: 
+  Provides tools for circular nonparametric regression when the response variable is angular 
+  and predictors include a combination of continuous and categorical covariates. Implements 
+  both Nadaraya–Watson and local linear estimators using product-kernel structures, with support 
+  for kernel-based bandwidth selection via cross-validation, bootstrap, and rule-of-thumb methods. 
+  Includes graphical tools for model assessment, residual diagnostics, and confidence bands. 
+  Designed for applications in cognitive science, psychophysics, spatial perception, and any 
+  context where orientation or angular outcomes depend on heterogeneous covariates.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 4.1.0)
+Imports: 
+    circular,
+    ggplot2,
+    future,
+    future.apply,
+    stats,
+    grid
+Suggests:
+    parallel,
+    gridExtra,
+    viridisLite,
+    plotly,
+    knitr,
+    rmarkdown,
+    bpDir
+URL: https://github.com/mario-francisco/circMixedReg
+BugReports: https://github.com/mario-francisco/circMixedReg/issues
