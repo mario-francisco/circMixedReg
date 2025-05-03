@@ -82,7 +82,7 @@ select_bandwidth_oracle <- function(x_grid, m_true, X, Z, theta,
     h_grid <- lapply(sds, function(sd) seq(0.1 * sd, 2 * sd, length.out = 5))
   }
   if (is.null(lambda_grid) && p > 0) {
-    lambda_grid <- replicate(p, seq(0.01, 1, length.out = 5), simplify = FALSE)
+    lambda_grid <- replicate(p, seq(0.01, 0.99, length.out = 5), simplify = FALSE)
   }
   
   # Build full bandwidth grid

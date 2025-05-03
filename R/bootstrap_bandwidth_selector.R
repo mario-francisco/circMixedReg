@@ -111,7 +111,7 @@ bootstrap_bandwidth_selector <- function(data,
     h_grid <- lapply(sds, function(sd) seq(0.1 * sd, 2 * sd, length.out = 5))
   }
   if (is.null(lambda_grid) && !is.null(Z)) {
-    lambda_grid <- replicate(ncol(Z), seq(0.01, 1, length.out = 5), simplify = FALSE)
+    lambda_grid <- replicate(ncol(Z), seq(0.01, 0.99, length.out = 5), simplify = FALSE)
   }
   
   grid <- expand.grid(c(h_grid, lambda_grid))
