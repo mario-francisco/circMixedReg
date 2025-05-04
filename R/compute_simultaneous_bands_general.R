@@ -80,10 +80,8 @@ compute_simultaneous_bands_general <- function(data,
   if (!z_level %in% z_levels) stop("Invalid z_level")
   
   new_data <- data.frame(
-    x_val = x_grid,
-    z_val = factor(z_level, levels = z_levels)
+    setNames(list(x_grid, factor(z_level, levels = z_levels)), c(cont_col, cat_col))
   )
-  names(new_data) <- c(cont_col, cat_col)
   
   m_hat <- predict_fun(data, new_data,
                        response_col = response_col,

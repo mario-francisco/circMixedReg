@@ -74,8 +74,7 @@ compute_bootstrap_bands_general <- function(data,
   if (!z_level %in% z_levels) stop("z_level must be one of the levels in the categorical predictor")
   
   new_data <- data.frame(
-    X = x_grid,
-    Z = factor(z_level, levels = z_levels)
+    setNames(list(x_grid, factor(z_level, levels = z_levels)), c(cont_col, cat_col))
   )
   
   m_hat <- predict_fun(data, new_data,
