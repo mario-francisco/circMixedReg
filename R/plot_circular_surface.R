@@ -20,9 +20,10 @@
 #' @return A \code{ggplot2} object displaying a circular-valued surface as a heatmap.
 #' 
 #' @importFrom ggplot2 ggplot aes labs theme_minimal theme element_text geom_raster scale_fill_gradientn coord_fixed
-#' @importFrom grDevices hcl.colors
-#' @importFrom graphics title
 #' @importFrom circular circular 
+#' @importFrom glow circular_palette
+#' @importFrom grDevices rainbow
+#' @importFrom stats setNames
 #'
 #' @examples
 #' x_grid <- seq(-1, 1, length.out = 50)
@@ -42,9 +43,8 @@ plot_circular_surface <- function(x_grid, y_grid, z_matrix,
   df <- expand.grid(x = x_grid, y = y_grid)
   df$angle <- as.vector(z_matrix %% (2 * pi))  # Ensure values are in [0, 2pi)
   
-  # Use smooth Viridis colors for circular data
-  n_colors <- 100
-  color_map <- hcl.colors(n = n_colors, palette = "Viridis", rev = FALSE)
+  # Use perceptually uniform circular color scale
+  color_map <- glow::circular_palette(n = 1000, pal_function = rainbow)
   
   ggplot(df, aes(x = x, y = y, fill = angle)) +
     geom_raster(interpolate = TRUE) +
@@ -58,6 +58,9 @@ plot_circular_surface <- function(x_grid, y_grid, z_matrix,
     coord_fixed() +
     labs(title = title, x = xlab, y = ylab) +
     theme_minimal(base_size = 14) +
-    theme(legend.title = element_text(size = 12),
-          legend.text = element_text(size = 11))
+    theme(
+      legend.title = element_text(size = 12),
+      legend.text = element_text(size = 11),
+      plot.title = element_text(size = 14, face = "bold", hjust = 0.5)
+    )
 }
