@@ -34,6 +34,17 @@ devtools::install_github("mario-francisco/circMixedReg")
 
 ---
 
+## Citation and version (for reproducibility)
+
+The results in the accompanying manuscript were obtained with **circMixedReg v0.1.0** (GitHub Release **v0.1.0**).
+
+To install exactly that version:
+
+```r
+devtools::install_github("mario-francisco/circMixedReg", ref = "v0.1.0")
+
+---
+
 ## Quick Example
 
 ```r
